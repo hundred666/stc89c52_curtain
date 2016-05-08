@@ -1,0 +1,650 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/07/2016  07:42:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\STUDY\IDE\KEIL451\C51\BIN\BL51.EXE ..\output\STARTUP.obj, ..\output\delay.obj, ..\output\esp8266.obj, ..\output\lux.o
+>> bj, ..\output\main.obj TO ..\output\curtain PRINT (..\listing\curtain.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\output\STARTUP.obj (?C_STARTUP)
+  ..\output\delay.obj (DELAY)
+  ..\output\esp8266.obj (ESP8266)
+  ..\output\lux.obj (LUX)
+  ..\output\main.obj (MAIN)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C_INIT)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C?COPY)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C?CLDPTR)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (PRINTF)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C?CSTPTR)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (?C?CCASE)
+  D:\STUDY\IDE\KEIL451\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  ..\output\curtain (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?ESP8266_INIT?ESP8266
+            DATA    000BH     0003H     UNIT         ?DT?_LENGTH?ESP8266
+            DATA    000EH     0003H     UNIT         ?DT?ESP8266
+                    0011H     000FH                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     003CH     UNIT         _DATA_GROUP_
+            DATA    005EH     001BH     UNIT         ?DT?MAIN
+            IDATA   0079H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0008H     UNIT         ?PR?ESP8266_INIT?ESP8266
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0015H     UNIT         ?PR?_SAVE_DATA?ESP8266
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0005H     UNIT         ?PR?ADC?LUX
+            CODE    002BH     0003H     ABSOLUTE     
+            CODE    002EH     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    038AH     0184H     UNIT         ?C?LIB_CODE
+            CODE    050EH     00E5H     UNIT         ?PR?MAIN?MAIN
+            CODE    05F3H     00C6H     UNIT         ?PR?_SEND_CMD?ESP8266
+            CODE    06B9H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0745H     0088H     UNIT         ?PR?TIMER2?MAIN
+            CODE    07CDH     005FH     UNIT         ?CO?ESP8266
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 2
+
+
+            CODE    082CH     005CH     UNIT         ?CO?MAIN
+            CODE    0888H     005BH     UNIT         ?PR?_CHECK_RESPOND?ESP8266
+            CODE    08E3H     0045H     UNIT         ?PR?ESP8266?MAIN
+            CODE    0928H     0043H     UNIT         ?PR?_PRINT?ESP8266
+            CODE    096BH     0040H     UNIT         ?PR?CHIP_INIT?MAIN
+            CODE    09ABH     002DH     UNIT         ?PR?_SEARCH_STR?ESP8266
+            CODE    09D8H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    09FFH     0024H     UNIT         ?PR?_LENGTH?ESP8266
+            CODE    0A23H     0019H     UNIT         ?PR?_DELAY_LONG?DELAY
+            CODE    0A3CH     0012H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0A4EH     000FH     UNIT         ?PR?ESP_DELAY?ESP8266
+            CODE    0A5DH     000EH     UNIT         ?C_INITSEG
+            CODE    0A6BH     0004H     UNIT         ?PR?DATA_INIT?ESP8266
+            CODE    0A6FH     0003H     UNIT         ?PR?TIMER0?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   ..\output\curtain (?C_STARTUP)
+
+
+SEGMENT                               BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT              START    LENGTH     START    LENGTH
+----------------------------------------------------------------------
+?C_C51STARTUP                      -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                      -----    -----      0022H    001EH
+  +--> ?CO?MAIN
+  +--> ?PR?CHIP_INIT?MAIN
+  +--> ?PR?_SEND_CMD?ESP8266
+  +--> ?PR?_CHECK_RESPOND?ESP8266
+
+?PR?_SEND_CMD?ESP8266              -----    -----      004AH    0003H
+  +--> ?PR?ESP_DELAY?ESP8266
+  +--> ?PR?_PRINT?ESP8266
+  +--> ?CO?ESP8266
+  +--> ?PR?DATA_INIT?ESP8266
+
+?PR?_PRINT?ESP8266                 -----    -----      004DH    0003H
+
+*** NEW ROOT ***************************************************
+
+?PR?ESP8266?MAIN                   -----    -----      -----    -----
+  +--> ?PR?_SAVE_DATA?ESP8266
+
+?PR?_SAVE_DATA?ESP8266             -----    -----      -----    -----
+  +--> ?CO?ESP8266
+  +--> ?PR?_SEARCH_STR?ESP8266
+
+?PR?_SEARCH_STR?ESP8266            -----    -----      0046H    0004H
+
+*** NEW ROOT ***************************************************
+
+?PR?TIMER2?MAIN                    -----    -----      -----    -----
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 3
+
+
+  +--> ?PR?_SEND_CMD?ESP8266
+
+?PR?PRINTF?PRINTF                  0020H.0  0001H.1    004AH    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  ..\output\curtain (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:06B9H         SEGMENT       ?C_C51STARTUP
+  I:0079H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:06BCH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:06B9H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:06B9H         LINE#         133
+  C:06BBH         LINE#         134
+  C:06BCH         LINE#         135
+  C:06BDH         LINE#         136
+  C:06BFH         LINE#         185
+  C:06C2H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0A3CH         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:0A23H         PUBLIC        _delay_long
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 4
+
+
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0007H         SYMBOL        z
+  -------         DO            
+  D:0006H         SYMBOL        x
+  -------         ENDDO         
+  C:0A3CH         LINE#         4
+  C:0A3CH         LINE#         6
+  C:0A42H         LINE#         7
+  C:0A4DH         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         PROC          _DELAY_LONG
+  D:0007H         SYMBOL        x
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0005H         SYMBOL        j
+  -------         ENDDO         
+  C:0A23H         LINE#         9
+  C:0A23H         LINE#         10
+  C:0A27H         LINE#         11
+  C:0A2DH         LINE#         12
+  C:0A33H         LINE#         13
+  C:0A3BH         LINE#         16
+  -------         ENDPROC       _DELAY_LONG
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        ESP8266
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:09FFH         PUBLIC        _length
+  D:00A8H         PUBLIC        IE
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.1       PUBLIC        TI
+  C:000EH         PUBLIC        _save_data
+  C:0928H         PUBLIC        _print
+  D:0099H         PUBLIC        SBUF
+  C:0A6BH         PUBLIC        data_init
+  D:0098H         PUBLIC        SCON
+  D:000EH         PUBLIC        cmd
+  C:09ABH         PUBLIC        _search_str
+  D:0088H         PUBLIC        TCON
+  C:0003H         PUBLIC        ESP8266_Init
+  C:0A4EH         PUBLIC        esp_delay
+  C:05F3H         PUBLIC        _send_cmd
+  C:0888H         PUBLIC        _check_respond
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  D:0010H         PUBLIC        respond_data
+  -------         PROC          ESP8266_INIT
+  -------         DO            
+  D:0008H         SYMBOL        cmd
+  D:000AH         SYMBOL        respond_data
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 5
+
+
+  C:0003H         LINE#         15
+  C:0003H         LINE#         17
+  C:0008H         LINE#         18
+  C:000AH         LINE#         19
+  -------         ENDPROC       ESP8266_INIT
+  -------         PROC          _PRINT
+  D:004DH         SYMBOL        string
+  C:0928H         LINE#         21
+  C:092EH         LINE#         22
+  C:0930H         LINE#         23
+  C:093BH         LINE#         24
+  C:093DH         LINE#         25
+  C:0940H         LINE#         26
+  C:0942H         LINE#         27
+  C:094DH         LINE#         29
+  C:094FH         LINE#         30
+  C:0958H         LINE#         32
+  C:095BH         LINE#         33
+  C:095EH         LINE#         34
+  C:0960H         LINE#         35
+  C:0963H         LINE#         36
+  C:0966H         LINE#         37
+  C:0968H         LINE#         38
+  C:096AH         LINE#         39
+  -------         ENDPROC       _PRINT
+  -------         PROC          _LENGTH
+  D:000BH         SYMBOL        string
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:09FFH         LINE#         41
+  C:0A05H         LINE#         42
+  C:0A08H         LINE#         43
+  C:0A1BH         LINE#         44
+  C:0A22H         LINE#         45
+  C:0A22H         LINE#         46
+  -------         ENDPROC       _LENGTH
+  -------         PROC          _SAVE_DATA
+  D:0005H         SYMBOL        buff
+  C:000EH         LINE#         48
+  C:0010H         LINE#         50
+  C:001FH         LINE#         51
+  C:0022H         LINE#         55
+  -------         ENDPROC       _SAVE_DATA
+  -------         PROC          _SEARCH_STR
+  D:0046H         SYMBOL        str
+  D:0049H         SYMBOL        buff
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:09ABH         LINE#         84
+  C:09B3H         LINE#         85
+  C:09B6H         LINE#         86
+  C:09C5H         LINE#         87
+  C:09C8H         LINE#         88
+  C:09CDH         LINE#         89
+  C:09D2H         LINE#         90
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 6
+
+
+  C:09D4H         LINE#         91
+  C:09D7H         LINE#         94
+  -------         ENDPROC       _SEARCH_STR
+  -------         PROC          _SEND_CMD
+  D:004AH         SYMBOL        command
+  C:05F3H         LINE#         97
+  C:05F9H         LINE#         98
+  C:05FCH         LINE#         99
+  C:0605H         LINE#         100
+  C:0628H         LINE#         101
+  C:064AH         LINE#         102
+  C:066CH         LINE#         103
+  C:068EH         LINE#         104
+  C:06B0H         LINE#         105
+  C:06B6H         LINE#         106
+  -------         ENDPROC       _SEND_CMD
+  -------         PROC          DATA_INIT
+  C:0A6BH         LINE#         109
+  C:0A6BH         LINE#         110
+  C:0A6EH         LINE#         111
+  -------         ENDPROC       DATA_INIT
+  -------         PROC          _CHECK_RESPOND
+  D:0006H         SYMBOL        def_cmd
+  C:0888H         LINE#         113
+  C:0888H         LINE#         114
+  C:08A1H         LINE#         115
+  C:08A1H         LINE#         116
+  C:08A6H         LINE#         117
+  C:08A6H         LINE#         118
+  C:08A8H         LINE#         119
+  C:08A8H         LINE#         121
+  C:08AAH         LINE#         122
+  C:08AAH         LINE#         123
+  C:08AFH         LINE#         124
+  C:08AFH         LINE#         125
+  C:08B1H         LINE#         126
+  C:08B1H         LINE#         128
+  C:08B3H         LINE#         129
+  C:08B3H         LINE#         130
+  C:08B8H         LINE#         131
+  C:08BDH         LINE#         133
+  C:08BFH         LINE#         134
+  C:08BFH         LINE#         135
+  C:08C4H         LINE#         136
+  C:08C4H         LINE#         137
+  C:08C6H         LINE#         138
+  C:08C6H         LINE#         140
+  C:08C8H         LINE#         141
+  C:08C8H         LINE#         142
+  C:08CDH         LINE#         143
+  C:08CDH         LINE#         144
+  C:08CFH         LINE#         145
+  C:08CFH         LINE#         147
+  C:08D1H         LINE#         148
+  C:08D1H         LINE#         149
+  C:08D6H         LINE#         150
+  C:08D9H         LINE#         151
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 7
+
+
+  C:08DDH         LINE#         152
+  C:08DDH         LINE#         154
+  C:08DFH         LINE#         155
+  C:08DFH         LINE#         156
+  C:08E2H         LINE#         157
+  -------         ENDPROC       _CHECK_RESPOND
+  -------         PROC          ESP_DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0A4EH         LINE#         159
+  C:0A4EH         LINE#         160
+  C:0A52H         LINE#         161
+  C:0A5CH         LINE#         162
+  -------         ENDPROC       ESP_DELAY
+  -------         ENDMOD        ESP8266
+
+  -------         MODULE        LUX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0026H         PUBLIC        adc
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          ADC
+  -------         DO            
+  D:0006H         SYMBOL        value
+  -------         ENDDO         
+  C:0026H         LINE#         8
+  C:0026H         LINE#         9
+  C:0028H         LINE#         14
+  C:002AH         LINE#         16
+  C:002AH         LINE#         17
+  -------         ENDPROC       ADC
+  -------         ENDMOD        LUX
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  B:0090H.3       PUBLIC        MA
+  D:00A8H         PUBLIC        IE
+  B:0090H.1       PUBLIC        MB
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  D:005EH         PUBLIC        light
+  B:0098H.0       PUBLIC        RI
+  D:0060H         PUBLIC        flag
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 8
+
+
+  B:0090H.6       PUBLIC        ON
+  C:08E3H         PUBLIC        esp8266
+  C:050EH         PUBLIC        main
+  B:00A0H.1       PUBLIC        ST
+  D:0061H         PUBLIC        flag_send
+  D:0062H         PUBLIC        info
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0071H         PUBLIC        TempDat
+  D:0072H         PUBLIC        cmd_phone
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:086AH         SYMBOL        _?ix1000
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.5       PUBLIC        ET2
+  B:00C8H.7       PUBLIC        TF2
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:00CDH         PUBLIC        TH2
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  C:0A6FH         PUBLIC        timer0
+  C:0745H         PUBLIC        timer2
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  B:00C8H.2       PUBLIC        TR2
+  B:00A0H.0       PUBLIC        CLK
+  B:00A0H.4       PUBLIC        ADDCS
+  D:00C9H         PUBLIC        T2MOD
+  D:00C8H         PUBLIC        T2CON
+  D:0077H         PUBLIC        j
+  D:0078H         PUBLIC        connect
+  B:0090H.2       PUBLIC        PWM
+  D:00D0H         PUBLIC        PSW
+  C:096BH         PUBLIC        Chip_Init
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        cCmd
+  -------         ENDDO         
+  C:050EH         LINE#         19
+  C:050EH         LINE#         22
+  C:0521H         LINE#         23
+  C:0524H         LINE#         26
+  C:052DH         LINE#         27
+  C:0538H         LINE#         28
+  C:0541H         LINE#         30
+  C:054CH         LINE#         32
+  C:0555H         LINE#         33
+  C:0560H         LINE#         35
+  C:0562H         LINE#         37
+  C:0562H         LINE#         41
+  C:0565H         LINE#         43
+  C:056BH         LINE#         44
+  C:0576H         LINE#         46
+  C:0578H         LINE#         47
+  C:057AH         LINE#         48
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 9
+
+
+  C:057CH         LINE#         49
+  C:0589H         LINE#         50
+  C:058BH         LINE#         51
+  C:058DH         LINE#         52
+  C:058FH         LINE#         53
+  C:0591H         LINE#         54
+  C:0593H         LINE#         55
+  C:0595H         LINE#         56
+  C:0595H         LINE#         58
+  C:0595H         LINE#         62
+  C:059AH         LINE#         63
+  C:059CH         LINE#         65
+  C:059CH         LINE#         66
+  C:05A6H         LINE#         67
+  C:05A8H         LINE#         69
+  C:05A8H         LINE#         70
+  C:05B2H         LINE#         71
+  C:05B4H         LINE#         73
+  C:05B4H         LINE#         74
+  C:05BEH         LINE#         75
+  C:05C1H         LINE#         77
+  C:05C1H         LINE#         78
+  C:05C7H         LINE#         80
+  C:05CCH         LINE#         81
+  C:05CEH         LINE#         82
+  C:05D0H         LINE#         83
+  C:05D2H         LINE#         84
+  C:05D4H         LINE#         85
+  C:05D6H         LINE#         86
+  C:05D8H         LINE#         87
+  C:05DAH         LINE#         88
+  C:05DAH         LINE#         89
+  C:05E1H         LINE#         90
+  C:05EAH         LINE#         93
+  C:05EDH         LINE#         94
+  C:05F0H         LINE#         96
+  C:05F0H         LINE#         118
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER0
+  C:0A6FH         LINE#         123
+  C:0A6FH         LINE#         124
+  C:0A71H         LINE#         125
+  -------         ENDPROC       TIMER0
+  -------         PROC          ESP8266
+  C:08E3H         LINE#         127
+  C:0900H         LINE#         130
+  C:0903H         LINE#         131
+  C:0906H         LINE#         133
+  C:090BH         LINE#         134
+  C:090DH         LINE#         135
+  C:090DH         LINE#         137
+  -------         ENDPROC       ESP8266
+  -------         PROC          TIMER2
+  C:0745H         LINE#         139
+  C:0762H         LINE#         141
+  C:0764H         LINE#         143
+  C:0767H         LINE#         144
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 10
+
+
+  C:076AH         LINE#         147
+  C:0770H         LINE#         153
+  C:0777H         LINE#         154
+  C:077AH         LINE#         156
+  C:0782H         LINE#         157
+  C:079AH         LINE#         158
+  C:07A3H         LINE#         159
+  C:07ACH         LINE#         160
+  C:07AFH         LINE#         161
+  C:07B2H         LINE#         163
+  C:07B2H         LINE#         178
+  -------         ENDPROC       TIMER2
+  -------         PROC          CHIP_INIT
+  C:096BH         LINE#         183
+  C:096BH         LINE#         185
+  C:096DH         LINE#         186
+  C:096FH         LINE#         190
+  C:0972H         LINE#         192
+  C:0975H         LINE#         193
+  C:0978H         LINE#         194
+  C:097BH         LINE#         196
+  C:097DH         LINE#         198
+  C:0980H         LINE#         200
+  C:0983H         LINE#         201
+  C:0986H         LINE#         203
+  C:098AH         LINE#         207
+  C:098CH         LINE#         210
+  C:098FH         LINE#         211
+  C:0992H         LINE#         213
+  C:0994H         LINE#         214
+  C:0996H         LINE#         215
+  C:099AH         LINE#         219
+  C:09A1H         LINE#         220
+  C:09AAH         LINE#         223
+  -------         ENDPROC       CHIP_INIT
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:045AH         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDPTR
+  C:0480H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0499H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        PRINTF
+  D:004AH         PUBLIC        ?_PRINTF517?BYTE
+  D:004AH         PUBLIC        ?_PRINTF?BYTE
+  D:004AH         PUBLIC        ?_SPRINTF517?BYTE
+  D:004AH         PUBLIC        ?_SPRINTF?BYTE
+  C:0090H         PUBLIC        _PRINTF
+  C:0090H         PUBLIC        _PRINTF517
+  C:008AH         PUBLIC        _SPRINTF
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/07/2016  07:42:39  PAGE 11
+
+
+  C:008AH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CSTPTR
+  C:04C6H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:04D8H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:04E8H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:09D8H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_LONG?DELAY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ESP8266_INIT?ESP8266
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LENGTH?ESP8266
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ADC?LUX
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_SEND_CMD?ESP8266
+    CALLER1: ?C_C51STARTUP
+    CALLER2: ?PR?TIMER2?MAIN
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_PRINT?ESP8266
+    CALLER1: ?C_C51STARTUP
+    CALLER2: ?PR?TIMER2?MAIN
+
+Program Size: data=106.1 xdata=0 code=2674
+LINK/LOCATE RUN COMPLETE.  7 WARNING(S),  0 ERROR(S)

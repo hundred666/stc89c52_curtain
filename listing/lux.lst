@@ -1,0 +1,41 @@
+C51 COMPILER V9.52.0.0   LUX                                                               05/07/2016 07:42:38 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE LUX
+OBJECT MODULE PLACED IN ..\output\lux.obj
+COMPILER INVOKED BY: D:\study\ide\keil451\C51\BIN\C51.EXE ..\user\lux.c BROWSE INCDIR(..\user\include) DEBUG OBJECTEXTEN
+                    -D PRINT(..\listing\lux.lst) TABS(2) OBJECT(..\output\lux.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #include"lux.h"
+   3          #include"main.h"
+   4          #include"delay.h"
+   5          #include"define.h"
+   6          
+   7          
+   8          unsigned int adc() {  
+   9   1          unsigned int value=0;
+  10   1        //OE=0;
+  11   1        
+  12   1          //while(EOC==0);
+  13   1        //OE=1;
+  14   1          value=P0;
+  15   1        //OE=0;
+  16   1          return value;
+  17   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      5    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
